@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <title>gsap - 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 140px;
+            height: 140px;
+            background: red;
+        }
+
+        .ball {
+            height: 40px;
+            width: 40px;
+            background: rebeccapurple;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+        }
+
+        .main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #000;
+            color: #eee;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+
+    <div class="ball">
+
+    </div>
+
+    <!-- <button id="play">play</button>
+    <button id="pause">pasue</button>
+    <button id="resume">resume</button>
+    <button id="restart">restart</button>
+    <button id="reverse">reverse</button> -->
+
+
+    <script>
+        // gsap.to(".box", { x: 200, duration: 2 })
+        // gsap.fromTo(".box", { rotation: 0, duration: 2 }, {  x:200,rotation: 360, background:"rebeccapurple", duration: 4 })
+
+
+        // gsap methods 
+        // let tween = gsap.to(".box", { x: 600, rotation: 360, duration: 4, paused: true });
+        // document.querySelector("#play").addEventListener("click", () => tween.play()); //plays the animation
+        // document.querySelector("#pause").addEventListener("click", () => tween.pause()); //pause the animation
+        // document.querySelector("#resume").addEventListener("click", () => tween.resume()); //resume the animation
+        // document.querySelector("#restart").addEventListener("click", () => tween.restart()); //restart the animation
+        // document.querySelector("#reverse").addEventListener("click", () => tween.reverse()); //reverse the animation
+
+
+        // keyframes 
+        let t1 = gsap.timeline();
+        // t1.to(".box", { x: 200, duration: 1 })
+        //     .to(".box", { y: 200, duration: 1 })
+        //     .to(".box", { x: 0, duration: 1 })
+        //     .to(".box", { y: 0, duration: 1 })
+
+        t1.to(
+            ".box",
+            {
+                keyframes: [
+                    { x: 200, onStart: () => console.log("started") },
+                    { y: 200 },
+                    { x: 0 },
+                    { y: 0, onComplete: () => console.log("completed") }
+                ],
+                duration: 4,
+                repeat: -1
+            }
+        )
+
+
+        let t2 = gsap.timeline();
+        t2.to(".ball", {
+            keyframes: [
+                { y: -200 },
+                { y: 0 }
+            ],
+            duration: 2,
+            repeat: -1,
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
