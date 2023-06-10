@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/style.css">
+    <script src="https://kit.fontawesome.com/7fd578f29d.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>landing page - gsap</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-title">
+            <h2>Persia</h2>
+        </div>
+        <nav class="header-menu">
+            <ul>
+                <li>Home</li>
+                <li>Shop</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="main">
+        <div class="main-text">
+            <h1>Persia</h1>
+            <h1>The land of magicians.</h1>
+        </div>
+    </main>
+
+
+    <section class="social">
+        <ul>
+            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><i class="fa-brands fa-youtube"></i></li>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-facebook"></i></li>
+        </ul>
+    </section>
+
+
+
+    <div class="line"></div>
+    <div class="two"></div>
+
+    <script>
+        let t1 = gsap.timeline();
+        t1.fromTo(".header-title h2", { opacity: 0, x:-20 }, { x: 0, duration: 1, opacity: 1, ease: "Expo.easeInOut" })
+        t1.fromTo(".header-menu ul li", { opacity: 0 , x:-20}, { x: 0, duration: 1, opacity: 1, ease: "Expo.easeInOut" })
+        t1.fromTo(".main .main-text h1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: "Expo.easeInOut" })
+        t1.fromTo(".social", { y: 1000, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "Expo.easeInOut" })
+        t1.fromTo(".line", { y: 1000, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "Expo.easeInOut" })
+        t1.fromTo(".two", { y: 1000, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "Expo.easeInOut" })
+    </script>
+</body>
+
+</html>
