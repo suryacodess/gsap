@@ -150,7 +150,7 @@ export default function Hero() {
               className="sarah-transparent absolute z-[1] hidden md:block"
               alt=""
             />
-            <div className="absolute z-[10] p-5 flex justify-center items-end md:items-center text-end md:text-center h-screen w-full">
+            <div className="absolute z-[10] p-5 flex justify-center items-end md:items-center text-end md:text-center h-dvh w-full">
               <h1 className="text-white text-5xl content-bottom-middle-heading">
                 Featuring curators around the world
               </h1>
