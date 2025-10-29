@@ -1,11 +1,10 @@
 import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
+import sarah from "../assets/sarah-ful.jpg";
+import sarahTransparent from "../assets/sarah.png";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, SplitText);
-
-import sarah from "../assets/sarah-ful.jpg";
-import sarahTransparent from "../assets/sarah.png";
-import { useEffect } from "react";
 
 export default function Hero() {
   let tl;
@@ -81,7 +80,7 @@ export default function Hero() {
     });
   }, []);
   return (
-    <section className="hero-section w-full h-dvh flex justify-center items-center overflow-hidden">
+    <section className="hero-section w-full h-dvh flex justify-center items-center overflow-hidden relative">
       <div className="content">
         <div className="content-top">
           <h2 className="text-3xl md:text-5xl text-center">
